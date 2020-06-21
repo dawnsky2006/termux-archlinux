@@ -1,5 +1,6 @@
 
 #!/data/data/com.termux/files/usr/bin/bash
+repo=https://mirrors.bfsu.edu.cn
 folder=arch-fs
 if [ -f "$folder" ]; then
 	first=1
@@ -27,7 +28,7 @@ if [ "$first" != 1 ];then
 		*)
 			echo "unknown architecture"; exit 1 ;;
 		esac
-		wget -c "https://mirrors.bfsu.edu.cn/lxc-images/images/archlinux/current/${archurl}/default/20200620_04%3A18/rootfs.tar.xz" -O $tarball
+		wget -c "$repo/lxc-images/images/archlinux/current/${archurl}/default/20200620_04%3A18/rootfs.tar.xz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
