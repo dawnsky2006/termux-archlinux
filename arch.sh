@@ -28,7 +28,7 @@ if [ "$first" != 1 ];then
 		*)
 			echo "unknown architecture"; exit 1 ;;
 		esac
-		wget -c "$repo/lxc-images/images/archlinux/current/${archurl}/default/20200620_04%3A18/rootfs.tar.xz" -O $tarball
+		wget -c "$repo/lxc-images/images/archlinux/current/${archurl}/default/20200629_04%3A18/rootfs.tar.xz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
