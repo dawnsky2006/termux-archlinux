@@ -14,13 +14,13 @@ if [ "$first" != 1 ];then
 		echo "Downloading Rootfs"
 		case `dpkg --print-architecture` in
 		aarch64)
-			archurl="arm64" ;;
+			archurl="aarch64" ;;
 		arm)
-			archurl="armhf" ;;
+			archurl="armv7" ;;
 		amd64)
-			archurl="amd64" ;;
+			archurl="unknown" ;;
 		x86_64)
-			archurl="amd64" ;;	
+			archurl="unknown" ;;	
 		i*86)
 			archurl="unknown" ;;
 		x86)
@@ -28,14 +28,14 @@ if [ "$first" != 1 ];then
 		*)
 			echo "unknown architecture"; exit 1 ;;
 		esac
-		wget -c "$repo/lxc-images/images/archlinux/current/${archurl}/default/20200721_04%3A18/rootfs.tar.xz" -O $tarball
+		wget -c "$repo/archlinuxarm/os/ArchLinuxARM-${archurl}-latest.tar.gz" -O $tarball
 	fi
 	cur=`pwd`
 	mkdir -p "$folder"
 	cd "$folder"
 	echo "Decompressing Rootfs"
 	echo "正在解压Rootfs."
-	proot --link2symlink tar -xJf ${cur}/${tarball}||:
+	proot --link2symlink tar -xzvf ${cur}/${tarball}||:
 	cd "$cur"
 fi
 mkdir -p arch-binds
