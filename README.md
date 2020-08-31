@@ -9,6 +9,6 @@ Run ArchLinux in Termux.
  ---- | ----- | 
  ARM  | √ |
  ARM64  | √ |  
- AMD64  | √ |  
+ AMD64  | x |  
  i386  | x |  
  mips  | x |  
