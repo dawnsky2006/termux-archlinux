@@ -17,14 +17,6 @@ if [ "$first" != 1 ];then
 			archurl="aarch64" ;;
 		arm)
 			archurl="armv7" ;;
-		amd64)
-			archurl="unknown" ;;
-		x86_64)
-			archurl="unknown" ;;	
-		i*86)
-			archurl="unknown" ;;
-		x86)
-			archurl="unknown" ;;
 		*)
 			echo "unknown architecture"; exit 1 ;;
 		esac
