@@ -1,16 +1,15 @@
-
 #!/data/data/com.termux/files/usr/bin/bash
 repo=https://mirrors.bfsu.edu.cn
 folder=arch-fs
 if [ -f "$folder" ]; then
 	first=1
-	echo "检测到已经下载文件,正在取消下载"
+	echo "检测到已经下载过文件,正在取消下载。"
 	echo "Canceling download"
 fi
 tarball="rootfs.tar.xz"
 if [ "$first" != 1 ];then
 	if [ ! -f $tarball ]; then
-		echo "正在下载Rootfs."
+		echo "正在下载Rootfs。"
 		echo "Downloading Rootfs"
 		case `dpkg --print-architecture` in
 		aarch64)
@@ -26,14 +25,14 @@ if [ "$first" != 1 ];then
 	mkdir -p "$folder"
 	cd "$folder"
 	echo "Decompressing Rootfs"
-	echo "正在解压Rootfs."
+	echo "正在解压Rootfs。"
 	proot --link2symlink tar -xzvf ${cur}/${tarball}||:
 	cd "$cur"
 fi
 mkdir -p arch-binds
 bin=start-arch.sh
 echo "Generating startup script"
-echo "正在生成启动脚本."
+echo "正在生成启动脚本。"
 cat > $bin <<- EOM
 #!/bin/bash
 cd \$(dirname \$0)
@@ -87,4 +86,4 @@ rm $tarball
 
 echo "############################"
 echo "You can now type  ./${bin}  to start ArchLinux"
-echo "你现在可以输入 ./${bin} 命令 启动Arch"
+echo "你现在可以输入 ./${bin} 命令 启动ArchLinux"
