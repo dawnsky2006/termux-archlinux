@@ -86,4 +86,4 @@ rm $tarball
 
 echo "############################"
 echo "You can now type  ./${bin}  to start ArchLinux"
-echo "你现在可以输入 ./${bin} 命令 启动ArchLinux"
+echo "你现在可以输入 ./${bin}  启动ArchLinux"
